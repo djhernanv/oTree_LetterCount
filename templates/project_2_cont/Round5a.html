@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+    <link href="{% static "project2cont/css/Round.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    Period 3
+{% endblock %}
+
+{% block content %}
+
+<div id="string">
+</div>
+
+<br>
+<input type="text" id="player_guess" autofocus>
+</input>
+
+<span id="min">00</span>:<span id="sec">00</span>
+
+<input type="hidden" name="output5a" value="0" id="id_output5a"/>
+
+<p align="right">
+    <button id="Switch_button" button = "button">Switch</button>
+</p>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static "project2cont/js/Round5a.js" %}"></script>
+{% endblock %}

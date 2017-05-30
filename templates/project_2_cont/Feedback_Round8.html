@@ -1,0 +1,70 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+
+
+{% block styles %}
+
+<!-- CSS Styling for Table: If you want to uncomment -> comment Bootstrap in content
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+.tg .tg-s6z2{text-align:center}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
+
+-->
+
+
+<!-- CSS Styling for Box around Text: Will use Bootstrap Panel
+
+<style>
+.border
+{
+border:1px;
+border-style:solid;
+border-color:#287EC7;
+padding: 1em;
+}
+</style>
+
+-->
+
+{% endblock %}
+
+{% block title %}
+    Your Final Results
+{% endblock %}
+
+{% block content %}
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading"> In this period you solved: </div>
+  <div class="panel-body">
+    6 strings. Therefore, in this period you earned
+    6 tokens. <br>
+     For the time spent in switch mode in this period you earned: 7 tokens. <br>
+    <b>Your total earnings in this period are therefore: 13 tokens.</b> <br>
+</p>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading"> In total you solved: </div>
+  <div class="panel-body">
+    98 strings. Therefore, in total you earned
+    98 tokens. <br>
+    Your earnings from time in switch mode in total are 48 tokens. <br>
+    <b>Your total earnings in the game are therefore 146 tokens.</b> <br>
+</p>
+  </div>
+</div>
+
+
+<p>Next, we will ask you to answer two questions about your perception of the game. They will not have any influence on your payment.</p>
+
+
+{% next_button %}
+
+{% endblock %}

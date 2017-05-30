@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Part 2
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        After each round, you will get feedback about the number of strings you solved and the technology you used.</p>
+    <p>
+        After completion of part 2 you will be asked to fill out a short survey before the experiment is finished.</p>
+    <p>
+        Press "Next" when you have read and understood the instructions.
+	    After you have pressed this button you may still need to wait for other participants to get ready.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+
+
+{% block styles %}
+
+<!-- CSS Styling for Table: If you want to uncomment -> comment Bootstrap in content
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+.tg .tg-s6z2{text-align:center}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
+
+-->
+
+<!-- CSS Styling for Box around Text: Will use Bootstrap Panel
+
+<style>
+.border
+{
+border:1px;
+border-style:solid;
+border-color:#287EC7;
+padding: 1em;
+}
+</style>
+
+
+-->
+
+{% endblock %}
+
+
+{% block title %}
+    Your Results in Period 5
+{% endblock %}
+
+{% block content %}
+
+<p class="alert alert-warning"> Your technology for the next periods is <strong>advanced</strong>.</p>
+
+<br>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading"> In this period you solved: </div>
+  <div class="panel-body">
+      8 strings. Therefore, in this period you earned 8 tokens. <br>
+      For the time spent in switch mode in this period you earned: 3 tokens. <br>
+      <b>Your total earnings in this period are therefore: 11 tokens.</b> <br>
+</p>
+  </div>
+</div>
+
+
+{% endblock %}
+
