@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Feedback Trial
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        You solved {{ player.output0 }} strings.
+    </p>
+
+{% next_button %}
+
+{% endblock %}

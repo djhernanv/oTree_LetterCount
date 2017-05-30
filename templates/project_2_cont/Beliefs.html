@@ -1,0 +1,46 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+{% load staticfiles %}
+
+
+{% block title %}
+    Your Beliefs
+{% endblock %}
+
+
+
+
+{% block content %}
+
+Please answer the following questions:
+    <br>
+    <br>
+
+    {% formfield player.output0 with label="What do you think will be <u>the average number</u> of strings solved in this round by your group?" %}
+
+    <br>
+
+    {% formfield player.output1 with label="How many strings do you think will the most productive member of your group solve in this period, if her or she got the <u> advanced technology</u>?" %}
+    {% formfield player.output2 with label="How many strings do you think will the most productive member of your group solve in this period, if her or she got the <u> basic technology</u>?" %}
+
+
+
+
+<!--
+Documentation on how to write a django template here:
+https://docs.djangoproject.com/en/1.8/ref/templates/language/
+
+Bootstrap comes pre-loaded, so you can use any Bootstrap elements:
+http://getbootstrap.com/components/
+
+-->
+
+    {% next_button %}
+
+{% endblock %}
+
+
+
+
+
+

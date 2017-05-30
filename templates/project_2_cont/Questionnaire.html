@@ -1,0 +1,89 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+{% load staticfiles %}
+
+
+
+{% block title %}
+    Questionnaire
+{% endblock %}
+
+
+{% block content %}
+
+<h4>
+Please answer the following questions:
+</h4>
+<br>
+<p>
+On a scale from 1 to 10 (1 being "not at all" and 10 being "exclusively")<br>
+    How much do you think luck affected your overall earnings?
+</p>
+<p>
+ <div id="Luck" class="btn-group" role="group" aria-label="Selection Buttons Luck">
+     <button type="button" class="btn btn-default">Not at all</button>
+     <button type="button" class="btn btn-default">2</button>
+     <button type="button" class="btn btn-default">3</button>
+     <button type="button" class="btn btn-default">4</button>
+    <button type="button" class="btn btn-default">5</button>
+    <button type="button" class="btn btn-default">6</button>
+    <button type="button" class="btn btn-default">7</button>
+    <button type="button" class="btn btn-default">8</button>
+    <button type="button" class="btn btn-default">9</button>
+    <button type="button" class="btn btn-default">Exclusively</button>
+
+ </div>
+</p>
+
+<br>
+
+<p>
+On a scale from 1 to 10 (1 being "not at all" and 10 being "exclusively")<br>
+    How important do you think skill was to achieve high overall earnings?
+</p>
+<p>
+ <div id="skill" class="btn-group" role="group" id="skill" aria-label="Selection Buttons">
+     <button type="button" class="btn btn-default">Not at all</button>
+     <button type="button" class="btn btn-default">2</button>
+     <button type="button" class="btn btn-default">3</button>
+     <button type="button" class="btn btn-default">4</button>
+    <button type="button" class="btn btn-default">5</button>
+    <button type="button" class="btn btn-default">6</button>
+    <button type="button" class="btn btn-default">7</button>
+    <button type="button" class="btn btn-default">8</button>
+    <button type="button" class="btn btn-default">9</button>
+    <button type="button" class="btn btn-default">Exclusively</button>
+
+ </div>
+</p>
+
+
+<p>
+
+<!--
+{ % formfield player.luck with label="How much do you think luck affected your overall earnings?" %}
+{ % formfield player.skill with label="How important do you think skill was to achieve high overall earnings?" %}
+-->
+</p>
+
+<!--
+Documentation on how to write a django template here:
+https://docs.djangoproject.com/en/1.8/ref/templates/language/
+
+Bootstrap comes pre-loaded, so you can use any Bootstrap elements:
+http://getbootstrap.com/components/
+
+-->
+
+    <br>
+    <br>
+
+    {% next_button %}
+
+{% endblock %}
+
+
+
+
+
+

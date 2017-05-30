@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Introduction
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Thank you for taking part in the experiment. The instructions are identical for each participant.
+        Please read the instructions carefully. You are not allowed to communicate with other participants during the experiment.
+        Please mute your phone and do not disturb other participants. In case anything is unclear, please raise your hand.
+        We will come to your desk and answer your questions in private.</p>
+    <p>
+        You will earn money during this experiment and you will receive your earnings in cash immediately after
+        the experiment is finished. How much money you earn depends on the actions you and the other participants take in
+        this experiment.</p>
+    <p>
+        The experiment consists of two parts. You will receive specific instructions before each part starts.</p>
+    {% next_button %}
+{% endblock %}
+
+
