@@ -20,7 +20,7 @@ Letter Counting Task - Control Group
 
 
 class Constants(BaseConstants):
-    name_in_url = 'Letter Counting'
+    name_in_url = 'Letter_Count'
     players_per_group = 2
     num_rounds = 1
 
