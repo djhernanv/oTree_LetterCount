@@ -4,7 +4,7 @@ This App allows you to create an Experiment with a Real Effort Task of Counting 
 ### Installation
 
 1. In Terminal or PowerShell go to your oTree folder, for instance ```cd oTree```, and create the folder questionnaire with ```mkdir Letter_Count``` .
-2. Make sure you have "numpy" installed with ```pip install numpy```
+2. Make sure you have "numpy" installed with ```pip install numpy``` or ```pip3 install numpy``` if you use Python 3.
 3. Define the App in settings.py with:
 ~~~
   SESSION_CONFIGS = [
