@@ -15,12 +15,12 @@ from otree.models import BaseSubsession, BaseGroup, BasePlayer
 author = 'Kathi'
 
 doc = """
-Meritocracy Experiment - Control Group
+Letter Counting Task - Control Group
 """
 
 
 class Constants(BaseConstants):
-    name_in_url = 'project_2_cont'
+    name_in_url = 'Letter Counting'
     players_per_group = 2
     num_rounds = 1
 
