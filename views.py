@@ -11,7 +11,7 @@ class Welcome(Page):
     pass
 
 class Welcome_wait(WaitPage):
-    #template_name = 'project_2_cont/Welcome_wait.html'
+    #template_name = 'Letter_Count/Welcome_wait.html'
     def after_all_players_arrive(self):
         pass
 
