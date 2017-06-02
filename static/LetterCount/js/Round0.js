@@ -26,6 +26,7 @@ me.pad = function(val) {
 me.settime = function() {
     me.sec = 0;
     me.timer = setInterval(function () {
+        document.getElementById("millisec").innerHTML = "00";
         document.getElementById("sec").innerHTML = me.pad(++me.sec % 60);
         document.getElementById("min").innerHTML = me.pad(parseInt(me.sec / 60, 10));
     }, 1000) // 1000 ms
@@ -40,6 +41,8 @@ me.resettime = function(){
 
     me.sec = 0;
     me.timer = setInterval(function () {
+        document.getElementById("millisec").innerHTML = "00";
+        document.getElementById("millisec").innerHTML = me.pad(++me.sec % 1000);
         document.getElementById("sec").innerHTML = me.pad(++me.sec % 60);
         document.getElementById("min").innerHTML = me.pad(parseInt(me.sec / 60, 10));
         }, 1000)
