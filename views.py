@@ -141,12 +141,12 @@ class Switch(WaitPage):
     body_text = "You are now in the switch mode."
 
 page_sequence = [
-    Welcome,
-    Welcome_wait,
+#    Welcome,
+#    Welcome_wait,
     Introduction,
     Task_Instructions,
-    Round0,
-    Feedback_Round0,
+#    Round0,
+#    Feedback_Round0,
     Switch_Instructions,
 #    Round1,
 #    Feedback_Round1,
