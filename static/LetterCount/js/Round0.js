@@ -1,5 +1,5 @@
 var sequences_0 = ["wgaaojlbenndnlfajaqqyv","wyafzlgacvagidwjzzayaharrwgxaxnhelvaoxizrlfsgafcoalxybaamnbfgxcptwopadajajnagkazzagzalamuj","hvkpjipslkuo","yaaqxjjhazaptaknryqkimguquqnerodxlqajizaybbadjvkarhc","awgfxamulbeayoaafvyieabkwldpuiadrk"];
-var solutions_0 = [4,20,0,9,7,];
+var solutions_0 = [4,20,0,9,7];
 var length_0 = solutions_0.length;
 
 var me = me || {};
