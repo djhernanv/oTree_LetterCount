@@ -38,7 +38,7 @@ class Competition_Instructions_3(Page):
 
 class Beliefs(Page):
     form_model = models.Player
-    form_fields = ['output0','output1','output2']
+    form_fields = ['avgbelief','mostprodATbelief','mostprodBTbelief']
 
 
 class Thank_you(Page):

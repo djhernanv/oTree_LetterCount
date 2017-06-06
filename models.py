@@ -88,3 +88,6 @@ class Player(BasePlayer):
     output6 = models.PositiveIntegerField()
     output7 = models.PositiveIntegerField()
     output8 = models.PositiveIntegerField()
+    avgbelief = models.PositiveIntegerField()
+    mostprodATbelief = models.PositiveIntegerField()
+    mostprodBTbelief = models.PositiveIntegerField()
