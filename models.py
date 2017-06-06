@@ -11,7 +11,8 @@ from otree.common import Currency as c, currency_range, safe_json
 from otree.constants import BaseConstants
 from otree.models import BaseSubsession, BaseGroup, BasePlayer
 
-author = 'AS,GS,HV,KS'
+
+author = 'Kathi'
 
 doc = """
 Letter Counting Task - Control Group
@@ -23,59 +24,22 @@ class Constants(BaseConstants):
     players_per_group = 5
     num_rounds = 1
 
-    # this defines and describes the payment methods. Make sure, the name of "Token" is defined in settings.py
     t = 20
-    tf = 10
-    tokensper_string = c(1)
+
+# this defines and describes the payment methods. Make sure, the name of "Token" is defined in settings.py
     eurosper_token = 0.10
+    tokensper_string = c(10)
     secondsper_token = 10
 
+    # Define and describe tech increases and switch methods
+    char_increase = 4
 
 class Subsession(BaseSubsession):
     pass
 
 
 class Group(BaseGroup):
-    groupoutput3 = models.PositiveIntegerField()
-    groupoutput4 = models.PositiveIntegerField()
-    groupoutput5 = models.PositiveIntegerField()
-    groupoutput6 = models.PositiveIntegerField()
-    groupoutput7 = models.PositiveIntegerField()
-    groupoutput8 = models.PositiveIntegerField()
-
-    def set_output3(self):
-        self.groupoutput3 = sum([p.output3 for p in self.get_players()])
-        if self.groupoutput3 == 0:
-            for p in self.get_players():
-                p.share3 = 0.2
-        else:
-            for p in self.get_players():
-                p.share3 = p.output3 / self.groupoutput3
-
-    def set_output4(self):
-        self.groupoutput4 = sum([p.output4 for p in self.get_players()])
-        for p in self.get_players():
-            p.share4 = p.output4 / self.groupoutput4
-
-    def set_output5(self):
-        self.groupoutput5 = sum([p.output5 for p in self.get_players()])
-        for p in self.get_players():
-            p.share5 = p.output5 / self.groupoutput5
-
-    def set_output6(self):
-        self.groupoutput6 = sum([p.output for p in self.get_players()])
-        for p in self.get_players():
-            p.share6 = p.output6 / self.groupoutput6
-
-    def set_output7(self):
-        self.groupoutput7 = sum([p.output7 for p in self.get_players()])
-        for p in self.get_players():
-            p.share7 = p.output7 / self.groupoutput7
-
-    def set_output8(self):
-        self.groupoutput8 = sum([p.output8 for p in self.get_players()])
-        for p in self.get_players():
-            p.share8 = p.output8 / self.groupoutput8
+    pass
 
 
 class Player(BasePlayer):
@@ -115,7 +79,6 @@ class Player(BasePlayer):
         # horizontal radio button instead of selection
         widget=widgets.RadioSelectHorizontal()
     )
-
 
     output0 = models.PositiveIntegerField()
     output1 = models.PositiveIntegerField()
@@ -395,4 +358,3 @@ class Player(BasePlayer):
             return 'D'
         if self.id_in_group == 5:
             return 'E'
-

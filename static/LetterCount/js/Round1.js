@@ -37,24 +37,11 @@ me.resettime = function(){
 }
 
 me.check = function(x) {
+
     document.getElementById("player_guess").value = "";
-
-    var el = document.createElement("input")
-    el.type = "hidden";
-    if (me.index+1 < 10){
-        el.name = "t10" + (me.index+1);
-    } else{
-        el.name = "t1" + (me.index+1);
-    }
-    el.value = document.getElementById("min").innerHTML + ":" + document.getElementById("sec").innerHTML;
-    el.id = el.name
-
-    var answers = document.getElementById("id_output1");
-    answers.appendChild(el);
 
     if (x === solutions_1[me.index]) {
         me.makeguess(me.index+1);
-        me.resettime();
     } else {
         me.makeguess(me.index);
     }
@@ -69,49 +56,46 @@ me.makeguess = function(x) {
         var string = document.getElementById("string");
         string.innerHTML = sequences_1[x];
 
-        document.getElementById("id_output1").setAttribute("value",me.index);
+        var answers = document.getElementById("id_output1");
+        answers.value = me.index;
+
+        $(document).ready(function(){
+            $(document).keydown(function(event){
+                if(event.keyCode === 13) {
+                    event.preventDefault();
+                    me.resettime();
+                    var wert = document.getElementById("player_guess").value;
+                    me.guess = parseInt(wert);
+                    me.check(me.guess);
+                }
+            });
+        })
+
+        $(document).ready(function(){
+            $(document).keyup(function(event){
+                if(event.keyCode === 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        })
+
+         $(document).ready(function(){
+            $(document).keypress(function(event){
+                if(event.keyCode === 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        })
     }
 }
 
-function keyDownTextField(e) {
-  var keyCode = e.keyCode;
-  if(keyCode==13) {
-    event.preventDefault();
-    var wert = document.getElementById("player_guess").value;
-    me.guess = parseInt(wert);
-    me.check(me.guess);
-    }
-}
-
-function keyUpTextField(e) {
-  var keyCode = e.keyCode;
-  if(keyCode==13) {
-    event.preventDefault();
-  }
-}
-
-function keyPressTextField(e) {
-  var keyCode = e.keyCode;
-  if(keyCode==13) {
-    event.preventDefault();
-  }
-}
-
-document.getElementById("Switch_button").addEventListener("click", function(event) {
-    event.preventDefault();
-    var pattern = document.getElementsByClassName("jumbotron")[0];
-        pattern.classList.add("hidden");
-    var switchmode = document.getElementsByClassName("Switch_mode");
-        switchmode[0].classList.remove("hidden");
-
+document.getElementById("Switch_button").addEventListener("click", function() {
+    document.write("You are now in the switch mode.")
 })
 
 window.onload = function(){
     me.makeguess(0);
     me.settime();
-    var switchmode = document.getElementsByClassName("Switch_mode");
-    switchmode[0].classList.add("hidden");
-    document.addEventListener("keydown", keyDownTextField, false);
-    document.addEventListener("keyup", keyUpTextField, false);
-    document.addEventListener("keypress", keyPressTextField, false);
 }

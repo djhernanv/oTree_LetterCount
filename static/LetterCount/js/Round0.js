@@ -1,6 +1,5 @@
 var sequences_0 = ["wgaaojlbenndnlfajaqqyv","wyafzlgacvagidwjzzayaharrwgxaxnhelvaoxizrlfsgafcoalxybaamnbfgxcptwopadajajnagkazzagzalamuj","hvkpjipslkuo","yaaqxjjhazaptaknryqkimguquqnerodxlqajizaybbadjvkarhc","awgfxamulbeayoaafvyieabkwldpuiadrk"];
 var solutions_0 = [4,20,0,9,7];
-
 var length_0 = solutions_0.length;
 
 var me = me || {};
@@ -20,7 +19,6 @@ me.makeguess = null;
 me.pad = function(val) {
     return val > 9 ? val : "0" + val;
 }
-
 
 
 // This function first sets the time to zero and then increments the counter every 1000ms by 1. Minutes (sec modulo 60) and seconds separately
@@ -46,6 +44,7 @@ me.resettime = function(){
         document.getElementById("min").innerHTML = me.pad(parseInt(me.sec / 60, 10));
         }, 1000)
 }
+
 
 
 // This function checks whether the correct number of "a"s was provided
@@ -93,7 +92,6 @@ me.makeguess = function(x) {
         document.getElementById("id_output0").setAttribute("value",me.index);
     }
 }
-
 
 // This function is called by the keydown event handler
 // it resets the time and triggers the checking function
