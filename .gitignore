@@ -1,7 +1,4 @@
 
-<<<<<<< HEAD
-*.pyc
-=======
 
 *.pyc
 
@@ -13,4 +10,3 @@ __pycache__/models.cpython-36.pyc
 
 __pycache__/views.cpython-36.pyc
 
->>>>>>> master
