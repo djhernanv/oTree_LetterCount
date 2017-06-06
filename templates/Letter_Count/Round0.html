@@ -10,20 +10,30 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="jumbotron">
+
 <div id="string">
 </div>
 
+<br>
 
-    <input type="text" class="text" id="player_guess" autofocus></input>  Time spent in the current string: <span  id="min">00</span>:<span id="sec">00</span>
+<input type="text" id="player_guess" size="4" autofocus>
+</input> &nbsp;
+<span id="min">00</span>:<span id="sec">00</span>
+&nbsp; Time spent in the current string
 
 <br>
 
+<input type="hidden" name="output0" id="id_output0"/>
 
-<input type="hidden" name="output0" value="0" id="id_output0"/>
 </div>
+<div class="next_container">
+    <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Continue">
+</div>
+
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="{% static "LetterCount/js/Round0.js" %}"></script>
+    <script type="text/javascript" src="{% static 'LetterCount/js/Round0.js' %}"></script>
 {% endblock %}
