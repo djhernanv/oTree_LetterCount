@@ -26,9 +26,6 @@ class Constants(BaseConstants):
 
     t = 20
 
-    sequences_0 = ["wgaaojlbenndnlfajaqqyv","wyafzlgacvagidwjzzayaharrwgxaxnhelvaoxizrlfsgafcoalxybaamnbfgxcptwopadajajnagkazzagzalamuj","hvkpjipslkuo","yaaqxjjhazaptaknryqkimguquqnerodxlqajizaybbadjvkarhc","awgfxamulbeayoaafvyieabkwldpuiadrk"]
-    solutions_0 = [4,20,0,9,7]
-
 # this defines and describes the payment methods. Make sure, the name of "Token" is defined in settings.py
     eurosper_token = 0.10
     tokensper_string = c(10)
