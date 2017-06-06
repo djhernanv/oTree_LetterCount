@@ -1,5 +1,9 @@
 #string {
+<<<<<<< HEAD
+    font-size: 1em;
+=======
     font-size: 2em;
+>>>>>>> master
     display: flex;
     justify-content: flex-start;
 
@@ -12,5 +16,14 @@
       -ms-word-break: break-all;
   /* Instead use this non-standard one: */
   word-break: break-word;
+<<<<<<< HEAD
+}
 
+#Switch_mode {
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+=======
+
+>>>>>>> master
 }
