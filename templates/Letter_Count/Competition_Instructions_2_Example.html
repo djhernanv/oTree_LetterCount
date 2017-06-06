@@ -29,8 +29,8 @@ padding: 1em;
 
 
 {% block title %}
-    
-	Part 2 Example 
+
+	Part 2 Example (2/3)
 {% endblock %}
 
 {% block content %}
@@ -39,7 +39,7 @@ padding: 1em;
   <!-- Default panel contents -->
 <div class="panel-heading">Group Results</div>
   <div class="panel-body">
-    Here you can see an artificial example of individual performances during a period of 4 minutes:
+    Here you can see an artificial example of individual performances:
   </div>
 
 
@@ -49,8 +49,8 @@ padding: 1em;
   <tr>
     <th class="tg-s6z2">Player</th>
     <th class="tg-s6z2">Production*</th>
-    <th class="tg-s6z2">Share of Group Production**</th>
-    <th class="tg-s6z2">Probability of Advanced Technology</th>
+    <th class="tg-s6z2">Share of total Group Production**</th>
+    <th class="tg-s6z2">Probability of receiving <em>advanced technology</em></th>
   </thead>
   </tr>
   <tr>
@@ -94,24 +94,23 @@ padding: 1em;
 
 
 <p>
-* Production refers to the amount of correctly solved strings. <br>
-** This is equal to the probability of achieving the advanced technology in the next period.
+* Production refers to the amount of correctly solved sequences. <br>
+** This is the player's share of the group's aggregated production.
 </p>
 
 </div>
 
 <!-- End Table -->
 
-    
+
 
    <p>
-	In this scenario, participant A solved aa sequences which corresponds to xa % of the total Group Counts.<br>
-	Therefore, participant A will get the <em>advanced technology</em> with a probability of ya % in the next round.</p>
-  
+	In this scenario, participant A solved aa sequences which corresponds to xa % of the total Group counts.<br>
+	Therefore, participant A will receive the <em>advanced technology</em> with a probability of ya % in the next round.</p>
+
 
   {% next_button %}
 
 
 
 {% endblock %}
-
