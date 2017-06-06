@@ -159,7 +159,7 @@ page_sequence = [
 #    Competition_Instructions_1,
 #    Competition_Instructions_2_Example,
 #    Competition_Instructions_3,
-#    Beliefs,
+    Beliefs,
 #    Round3,
 #    Feedback_Round3,
 #    Beliefs,
