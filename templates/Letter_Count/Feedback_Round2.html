@@ -2,16 +2,16 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Feedback Part 1 continued
+    Feedback Part 1
 {% endblock %}
 
 {% block content %}
 
     <p>
-      In this period you solved {{ player.output2 }} sequences which earned you {{ player.output2 }} Tokens.<br>
-      You spent {{}} seconds in the <em>switch mode</em> which earned you {{}} Tokens.</p>
-  <p>
-      Your total earnings of this period are therefore <strong>{{}} Tokens.</strong></p>
+        In this period you solved {{ player.output2 }} sequences which earned you {{ player.output2|c }}.<br>
+        You spent {{ player.switcht2 }} seconds in the <em>switch mode</em> which earned you {{ player.switch2|c }}.</p>
+    <p>
+        Your total earnings of this period are therefore <strong>{{player.total1|c}}.</strong></p>
 
 {% next_button %}
 

@@ -1,5 +1,6 @@
 
 *.pyc
+<<<<<<< HEAD
 *.pyc
 *.pyc
 *.pyc
@@ -8,3 +9,5 @@
 *.pyc
 *.pyc
 *.pyc
+=======
+>>>>>>> 4d172ff105cbddb2cc8e45b65f9f80fb093a83ee

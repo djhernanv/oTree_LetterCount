@@ -8,10 +8,10 @@
 {% block content %}
 
     <p>
-        In this period you solved {{ player.output1 }} sequences which earned you {{ player.output1 }} Tokens.<br>
-        You spent {{}} seconds in the <em>switch mode</em> which earned you {{}} Tokens.</p>
+        In this period you solved {{} player.output1|c }} sequences which earned you {{} player.output1|c }}.<br>
+        You spent {{player.switcht1}} seconds in the <em>switch mode</em> which earned you {{player.switch1|c}}.</p>
     <p>
-        Your total earnings of this period are therefore <strong>{{}} Tokens.</strong></p>
+        Your total earnings of this period are therefore <strong>{{player.total1|c}}.</strong></p>
 
 {% next_button %}
 
