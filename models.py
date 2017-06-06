@@ -15,12 +15,12 @@ from otree.models import BaseSubsession, BaseGroup, BasePlayer
 author = 'Kathi'
 
 doc = """
-Meritocracy Experiment - Control Group
+Letter Counting Task - Control Group
 """
 
 
 class Constants(BaseConstants):
-    name_in_url = 'project_2_cont'
+    name_in_url = 'Letter_Count'
     players_per_group = 2
     num_rounds = 1
 
@@ -33,6 +33,13 @@ class Constants(BaseConstants):
                    "wtjaaekysg", "qaaghrzbhu"]
     solutions_0 = [2, 2, 2, 1, 2, 2, 3, 1, 1, 2, 4, 2, 3, 4, 1, 2, 1, 1, 3, 2, 3, 2, 1, 3, 2, 4, 3, 2, 2, 2]
 
+# this defines and describes the payment methods. Make sure, the name of "Token" is defined in settings.py
+    eurosper_token = 0.10
+    tokensper_string = c(10)
+    secondsper_token = 10
+
+    # Define and describe tech increases and switch methods
+    char_increase = 4
 
 class Subsession(BaseSubsession):
     pass

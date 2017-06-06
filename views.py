@@ -11,7 +11,7 @@ class Welcome(Page):
     pass
 
 class Welcome_wait(WaitPage):
-    #template_name = 'project_2_cont/Welcome_wait.html'
+    #template_name = 'Letter_Count/Welcome_wait.html'
     def after_all_players_arrive(self):
         pass
 
@@ -52,7 +52,7 @@ class Round0(Page):
     form_fields = ['output0']
 
 class Round1(Page):
-    timeout_seconds = 240
+    timeout_seconds = 200
     form_model = models.Player
     form_fields = ['output1']
 
@@ -143,15 +143,15 @@ class Switch(WaitPage):
 page_sequence = [
 #    Welcome,
 #    Welcome_wait,
-#    Introduction,
-#    Task_Instructions,
-    Round0,
-    Feedback_Round0,
+    Introduction,
+    Task_Instructions,
+#   Round0,
+#    Feedback_Round0,
 #    Switch_Instructions,
-#    Round1,
+#   Round1,
 #    Feedback_Round1,
 #    Technology_Instructions,
-#    Round2,
+   Round2,
 #    Feedback_Round2,
 #    Competition_Instructions_1,
 #    Competition_Instructions_2_Example,
@@ -175,5 +175,5 @@ page_sequence = [
 #    Round8,
 #    Feedback_Round8,
 #    Questionnaire,
-#    Thank_you,
+    Thank_you,
 ]
