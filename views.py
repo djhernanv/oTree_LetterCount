@@ -40,8 +40,6 @@ class Beliefs(Page):
     form_model = models.Player
     form_fields = ['output0','output1','output2']
 
-class Questionnaire(Page):
-    pass
 
 class Thank_you(Page):
     pass
@@ -140,12 +138,17 @@ class FeedbackF2(Page):
 class Switch(WaitPage):
     body_text = "You are now in the switch mode."
 
+
+class Questionnaire(Page):
+    form_model = models.Player
+    form_fields = ['luck', 'skill']
+
 page_sequence = [
 #    Welcome,
 #    Welcome_wait,
     Introduction,
     Task_Instructions,
-   Round0,
+#   Round0,
 #    Feedback_Round0,
 #    Switch_Instructions,
 #   Round1,
@@ -174,6 +177,6 @@ page_sequence = [
 #    Beliefs,
 #    Round8,
 #    Feedback_Round8,
-#    Questionnaire,
+    Questionnaire,
     Thank_you,
 ]

@@ -43,6 +43,42 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+
+    #This defines the choices for the Questionnaire
+    luck = models.PositiveIntegerField(
+        choices=[
+            [1, 'Not at all'],
+            [2, ''],
+            [3, ''],
+            [4, ''],
+            [5, ''],
+            [6, ''],
+            [7, ''],
+            [8, ''],
+            [9, ''],
+            [10, ''],
+        ],
+        # horizontal radio button instead of selection
+        widget=widgets.RadioSelectHorizontal()
+    )
+    #This defines the choices for the Questionnaire
+    skill = models.PositiveIntegerField(
+        choices=[
+            [1, '1'],
+            [2, '2'],
+            [3, '3'],
+            [4, '4'],
+            [5, '5'],
+            [6, '6'],
+            [7, '7'],
+            [8, '8'],
+            [9, '9'],
+            [10, '10'],
+        ],
+        # horizontal radio button instead of selection
+        widget=widgets.RadioSelectHorizontal()
+    )
+
     output0 = models.PositiveIntegerField()
     output1 = models.PositiveIntegerField()
     output2 = models.PositiveIntegerField()
