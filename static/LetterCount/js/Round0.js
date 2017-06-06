@@ -1,6 +1,5 @@
 var sequences_0 = ["wgaaojlbenndnlfajaqqyv","wyafzlgacvagidwjzzayaharrwgxaxnhelvaoxizrlfsgafcoalxybaamnbfgxcptwopadajajnagkazzagzalamuj","hvkpjipslkuo","yaaqxjjhazaptaknryqkimguquqnerodxlqajizaybbadjvkarhc","awgfxamulbeayoaafvyieabkwldpuiadrk"];
 var solutions_0 = [4,20,0,9,7];
-
 var length_0 = solutions_0.length;
 
 var me = me || {};
@@ -20,7 +19,6 @@ me.makeguess = null;
 me.pad = function(val) {
     return val > 9 ? val : "0" + val;
 }
-
 
 
 // This function first sets the time to zero and then increments the counter every 1000ms by 1. Minutes (sec modulo 60) and seconds separately
@@ -47,53 +45,6 @@ me.resettime = function(){
         }, 1000)
 }
 
-<<<<<<< HEAD
-// This function checks whether the correct number of "a"s was provided
-// resets the input text field to empty
-me.check = function(x) {
-    document.getElementById("player_guess").value = "";
-
-    var el = document.createElement("input")
-    el.type = "hidden";
-    if (me.index+1 < 10){
-        el.name = "t00" + (me.index+1);
-    } else{
-        el.name = "t0" + (me.index+1);
-    }
-    el.value = document.getElementById("min").innerHTML + ":" + document.getElementById("sec").innerHTML;
-    el.id = el.name
-
-    var answers = document.getElementById("id_output0");
-    answers.appendChild(el);
-
-    if (x === solutions_0[me.index]) {
-        me.makeguess(me.index+1);
-        me.resettime();
-    } else {
-        me.makeguess(me.index);
-    }
-}
-
-// This function loads and displays the next string
-me.makeguess = function(x) {
-    if (x >= length_0) {
-        me.index = x;
-        document.getElementById("id_output0").setAttribute("value",me.index);
-
-        var pattern = document.getElementsByClassName("jumbotron")[0];
-        pattern.classList.add("hidden");
-        var next = document.getElementsByClassName("next-button");
-        next[0].classList.remove("hidden");
-    } else {
-        me.index = x;
-
-        var string = document.getElementById("string");
-        string.innerHTML = sequences_0[x];
-
-        document.getElementById("id_output0").setAttribute("value",me.index);
-    }
-}
-=======
 
 // This function checks whether the correct number of "a"s was provided
 // resets the input text field to empty
@@ -106,7 +57,6 @@ me.check = function(x) {
     document.getElementById("player_guess").value = ""; // empties the text input field
 }
 
->>>>>>> master
 
 // This function is called by the keydown event handler
 // it resets the time and triggers the checking function
@@ -117,17 +67,11 @@ function keyDownTextField(e) {
     var wert = document.getElementById("player_guess").value;
     me.guess = parseInt(wert);
     me.check(me.guess);
-<<<<<<< HEAD
-    }
-}
-
-=======
     me.resettime();
     }
 }
 
 
->>>>>>> master
 // This function is called by the keyup event handler and only blocks the enter button
 function keyUpTextField(e) {
   var keyCode = e.keyCode;
@@ -136,10 +80,7 @@ function keyUpTextField(e) {
   }
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 // This function is called by the keypress event handler and only blocks the enter button
 function keyPressTextField(e) {
   var keyCode = e.keyCode;
@@ -148,8 +89,6 @@ function keyPressTextField(e) {
   }
 }
 
-<<<<<<< HEAD
-=======
 
 // This function loads and displays the next string
 me.makeguess = function(x) {
@@ -165,7 +104,6 @@ me.makeguess = function(x) {
 }
 
 
->>>>>>> master
 // displays the first string and starts the counter
 // Importantly, the event handlers are only called here once!!!
 window.onload = function(){
@@ -174,10 +112,4 @@ window.onload = function(){
     document.addEventListener("keydown", keyDownTextField, false);
     document.addEventListener("keyup", keyUpTextField, false);
     document.addEventListener("keypress", keyPressTextField, false);
-<<<<<<< HEAD
-    var next = document.getElementsByClassName("next-button");
-    next[0].classList.add("hidden");
 }
-=======
-}
->>>>>>> master
