@@ -146,6 +146,7 @@ page_sequence = [
     Introduction,
     Task_Instructions,
     Round0,
+    Feedback_Round0,
     Switch_Instructions,
     Round1,
     Feedback_Round1,
