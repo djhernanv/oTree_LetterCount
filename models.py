@@ -20,11 +20,7 @@ Letter Counting Task - Control Group
 
 class Constants(BaseConstants):
     name_in_url = 'Letter_Count'
-<<<<<<< HEAD
     players_per_group = 5
-=======
-    players_per_group = 2
->>>>>>> master
     num_rounds = 1
 
     # this defines and describes the payment methods. Make sure, the name of "Token" is defined in settings.py
@@ -34,19 +30,6 @@ class Constants(BaseConstants):
     eurosper_token = 0.10
     secondsper_token = 10
 
-<<<<<<< HEAD
-    # Define and describe tech increases and switch methods
-    char_increase1 = 2
-    char_increase2 = 4
-=======
-# this defines and describes the payment methods. Make sure, the name of "Token" is defined in settings.py
-    eurosper_token = 0.10
-    tokensper_string = c(10)
-    secondsper_token = 10
->>>>>>> master
-
-    # Define and describe tech increases and switch methods
-    char_increase = 4
 
 class Subsession(BaseSubsession):
     pass
@@ -96,9 +79,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-<<<<<<< HEAD
     output = models.PositiveIntegerField()
-=======
 
     #This defines the choices for the Questionnaire
     luck = models.PositiveIntegerField(
@@ -135,7 +116,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal()
     )
 
->>>>>>> master
+
     output0 = models.PositiveIntegerField()
     output1 = models.PositiveIntegerField()
     output2 = models.PositiveIntegerField()
@@ -145,7 +126,6 @@ class Player(BasePlayer):
     output6 = models.PositiveIntegerField()
     output7 = models.PositiveIntegerField()
     output8 = models.PositiveIntegerField()
-<<<<<<< HEAD
     share3 = models.FloatField()
     share4 = models.FloatField()
     share5 = models.FloatField()
@@ -397,6 +377,9 @@ class Player(BasePlayer):
     t828 = models.CharField()
     t829 = models.CharField()
     t830 = models.CharField()
+    avgbelief = models.PositiveIntegerField()
+    mostprodATbelief = models.PositiveIntegerField()
+    mostprodBTbelief = models.PositiveIntegerField()
 
     def set_output(self):
         self.output = self.output0 + self.output1 + self.output2 + self.output3 + self.output4 + self.output5 + self.output6 + self.output7 + self.output8
@@ -412,8 +395,4 @@ class Player(BasePlayer):
             return 'D'
         if self.id_in_group == 5:
             return 'E'
-=======
-    avgbelief = models.PositiveIntegerField()
-    mostprodATbelief = models.PositiveIntegerField()
-    mostprodBTbelief = models.PositiveIntegerField()
->>>>>>> master
+
