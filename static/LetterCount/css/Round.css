@@ -1,5 +1,5 @@
 #string {
-    font-size: 2em;
+    font-size: 1em;
     display: flex;
     justify-content: flex-start;
 
@@ -12,5 +12,10 @@
       -ms-word-break: break-all;
   /* Instead use this non-standard one: */
   word-break: break-word;
+}
 
+#Switch_mode {
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
 }

@@ -46,17 +46,52 @@ me.resettime = function(){
 }
 
 
+
 // This function checks whether the correct number of "a"s was provided
 // resets the input text field to empty
 me.check = function(x) {
+    document.getElementById("player_guess").value = "";
+
+    var el = document.createElement("input")
+    el.type = "hidden";
+    if (me.index+1 < 10){
+        el.name = "t00" + (me.index+1);
+    } else{
+        el.name = "t0" + (me.index+1);
+    }
+    el.value = document.getElementById("min").innerHTML + ":" + document.getElementById("sec").innerHTML;
+    el.id = el.name
+
+    var answers = document.getElementById("id_output0");
+    answers.appendChild(el);
+
     if (x === solutions_0[me.index]) {
         me.makeguess(me.index+1);
+        me.resettime();
     } else {
         me.makeguess(me.index);
     }
-    document.getElementById("player_guess").value = ""; // empties the text input field
 }
 
+// This function loads and displays the next string
+me.makeguess = function(x) {
+    if (x >= length_0) {
+        me.index = x;
+        document.getElementById("id_output0").setAttribute("value",me.index);
+
+        var pattern = document.getElementsByClassName("jumbotron")[0];
+        pattern.classList.add("hidden");
+        var next = document.getElementsByClassName("next-button");
+        next[0].classList.remove("hidden");
+    } else {
+        me.index = x;
+
+        var string = document.getElementById("string");
+        string.innerHTML = sequences_0[x];
+
+        document.getElementById("id_output0").setAttribute("value",me.index);
+    }
+}
 
 // This function is called by the keydown event handler
 // it resets the time and triggers the checking function
@@ -67,7 +102,6 @@ function keyDownTextField(e) {
     var wert = document.getElementById("player_guess").value;
     me.guess = parseInt(wert);
     me.check(me.guess);
-    me.resettime();
     }
 }
 
@@ -112,4 +146,6 @@ window.onload = function(){
     document.addEventListener("keydown", keyDownTextField, false);
     document.addEventListener("keyup", keyUpTextField, false);
     document.addEventListener("keypress", keyPressTextField, false);
+    var next = document.getElementsByClassName("next-button");
+    next[0].classList.add("hidden");
 }
