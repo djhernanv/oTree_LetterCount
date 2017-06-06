@@ -146,10 +146,7 @@ page_sequence = [
     Introduction,
     Task_Instructions,
     Round0,
-<<<<<<< Updated upstream
-=======
     Feedback_Round0,
->>>>>>> Stashed changes
     Switch_Instructions,
     Round1,
     Feedback_Round1,
