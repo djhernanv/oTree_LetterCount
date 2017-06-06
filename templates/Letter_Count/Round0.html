@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
 
 <div class="jumbotron">
 
@@ -36,4 +37,22 @@
 
 {% block scripts %}
     <script type="text/javascript" src="{% static 'LetterCount/js/Round0.js' %}"></script>
+=======
+<div class="jumbotron">
+<div id="string">
+</div>
+
+
+    <input type="text" class="text" id="player_guess" autofocus></input>  Time spent in the current string: <span  id="min">00</span>:<span id="sec">00</span>
+
+<br>
+
+
+<input type="hidden" name="output0" value="0" id="id_output0"/>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static "LetterCount/js/Round0.js" %}"></script>
+>>>>>>> master
 {% endblock %}
