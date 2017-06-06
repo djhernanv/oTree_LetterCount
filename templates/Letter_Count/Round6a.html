@@ -2,7 +2,7 @@
 {% load staticfiles otree_tags %}
 
 {% block styles %}
-    <link href="{% static "project2cont/css/Round.css" %}" rel="stylesheet">
+    <link href="{% static "LetterCount/css/Round.css" %}" rel="stylesheet">
 {% endblock %}
 
 {% block title %}
@@ -11,22 +11,34 @@
 
 {% block content %}
 
+<div class="jumbotron">
+
 <div id="string">
 </div>
 
 <br>
-<input type="text" id="player_guess" autofocus>
-</input>
 
+<input type="text" id="player_guess" size="4" autofocus>
+</input> &nbsp;
 <span id="min">00</span>:<span id="sec">00</span>
+&nbsp; Time spent in the current string
 
-<input type="hidden" name="output6a" value="0" id="id_output6a"/>
+<br>
+
+<input type="hidden" name="output6" id="id_output6"/>
 
 <p align="right">
     <button id="Switch_button" button = "button">Switch</button>
 </p>
+
+</div>
+
+<div id="Switch_mode" class="Switch_mode">
+    You are now in the switch mode!
+</div>
+
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="{% static "project2cont/js/Round6a.js" %}"></script>
+    <script type="text/javascript" src="{% static "LetterCount/js/Round6a.js" %}"></script>
 {% endblock %}
