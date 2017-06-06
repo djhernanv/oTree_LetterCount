@@ -171,7 +171,7 @@ page_sequence = [
     Round6b,
     Feedback_Round6,
     Beliefs,
-    Round7a
+    Round7a,
     Round7b,
     Feedback_Round7,
     Beliefs,
