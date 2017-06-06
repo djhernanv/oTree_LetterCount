@@ -3,28 +3,32 @@ var solutions_7a = [1,3,4,5,4,5,4,5,5,5,7,5,6,8,6,8,11,6,11,12,6,13,18,7,13,13,9
 var length_7a = solutions_7a.length;
 
 var me = me || {};
-index = null;
+me.index = null;
 me.guess = null;
+me.timer = null;
 me.pad = null;
 me.settime = null;
 me.resettime = null;
 me.check = null;
 me.makeguess = null;
-me.timer = null;
 
 me.pad = function(val) {
     return val > 9 ? val : "0" + val;
 }
 
 me.settime = function() {
-        me.sec = 0;
-        me.timer = setInterval(function () {
+    me.sec = 0;
+    me.timer = setInterval(function () {
         document.getElementById("sec").innerHTML = me.pad(++me.sec % 60);
         document.getElementById("min").innerHTML = me.pad(parseInt(me.sec / 60, 10));
         }, 1000)
 }
+
 me.resettime = function(){
     clearInterval(me.timer);
+    document.getElementById("sec").innerHTML = "00";
+    document.getElementById("min").innerHTML = "00";
+
     me.sec = 0;
     me.timer = setInterval(function () {
         document.getElementById("sec").innerHTML = me.pad(++me.sec % 60);
@@ -37,71 +41,76 @@ me.check = function(x) {
 
     var el = document.createElement("input")
     el.type = "hidden";
-    /*if (rm.choice+1 < 10)
-        el.name = "c0" + (rm.choice+1);
-    else
-        el.name = "c" + (rm.choice+1);*/
-    el.name = "a";
-    /*el.value = parseInt(x);*/
-    el.value = 6;
+    if (me.index+1 < 10){
+        el.name = "t70" + (me.index+1);
+    } else{
+        el.name = "t7" + (me.index+1);
+    }
+    el.value = document.getElementById("min").innerHTML + ":" + document.getElementById("sec").innerHTML;
     el.id = el.name
 
-    var answers = document.getElementById("answers");
+    var answers = document.getElementById("id_output7");
     answers.appendChild(el);
 
-    if (x === solutions_7a[index]) {
-        me.makeguess(index+1);
+    if (x === solutions_7a[me.index]) {
+        me.makeguess(me.index+1);
+        me.resettime();
     } else {
-        me.makeguess(index);
+        me.makeguess(me.index);
     }
 }
 
 me.makeguess = function(x) {
-
     if (x >= length_7a) {
         alert("Error");
     } else {
-        index = x;
+        me.index = x;
 
         var string = document.getElementById("string");
         string.innerHTML = sequences_7a[x];
 
-        var answers = document.getElementById("id_output7a");
-        answers.innerHTML = index;
-
-        $(document).ready(function(){
-            $(document).keydown(function(event){
-                if(event.keyCode === 13) {
-                    event.preventDefault();
-                    me.resettime();
-                    var wert = document.getElementById("player_guess").value;
-                    me.guess = parseInt(wert);
-                    me.check(me.guess);
-                }
-            });
-        })
-
-        $(document).ready(function(){
-            $(document).keyup(function(event){
-                if(event.keyCode === 13) {
-                    event.preventDefault();
-                    me.resettime();
-                }
-            });
-        })
-
-         $(document).ready(function(){
-            $(document).keypress(function(event){
-                if(event.keyCode === 13) {
-                    event.preventDefault();
-                    me.resettime();
-                }
-            });
-        })
+        document.getElementById("id_output7").setAttribute("value",me.index);
     }
 }
+
+function keyDownTextField(e) {
+  var keyCode = e.keyCode;
+  if(keyCode==13) {
+    event.preventDefault();
+    var wert = document.getElementById("player_guess").value;
+    me.guess = parseInt(wert);
+    me.check(me.guess);
+    }
+}
+
+function keyUpTextField(e) {
+  var keyCode = e.keyCode;
+  if(keyCode==13) {
+    event.preventDefault();
+  }
+}
+
+function keyPressTextField(e) {
+  var keyCode = e.keyCode;
+  if(keyCode==13) {
+    event.preventDefault();
+  }
+}
+
+document.getElementById("Switch_button").addEventListener("click", function() {
+    event.preventDefault();
+    var pattern = document.getElementsByClassName("jumbotron")[0];
+        pattern.classList.add("hidden");
+    var switchmode = document.getElementsByClassName("Switch_mode");
+        switchmode[0].classList.remove("hidden");
+})
 
 window.onload = function(){
     me.makeguess(0);
     me.settime();
+    var switchmode = document.getElementsByClassName("Switch_mode");
+    switchmode[0].classList.add("hidden");
+    document.addEventListener("keydown", keyDownTextField, false);
+    document.addEventListener("keyup", keyUpTextField, false);
+    document.addEventListener("keypress", keyPressTextField, false);
 }
